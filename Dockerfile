@@ -2,6 +2,7 @@ FROM r-base
 
 RUN apt-get update
 RUN apt-get install curl libcurl4-openssl-dev libssl-dev g++ -y
+RUN R -e "install.packages('https://cloud.r-project.org/bin/windows/contrib/3.1/curl_0.9.7.zip',repos=NULL,type='source')"
 RUN R -e "install.packages('bigrquery')"
 RUN R -e "install.packages('https://cran.r-project.org/src/contrib/Archive/BH/BH_1.62.0-1.tar.gz')"
 RUN R -e "install.packages('rstan')"
